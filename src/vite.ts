@@ -1,5 +1,3 @@
-// vite.ts
-//
 // Vite plugin. Runs as a `pre` transform so it sees source (with TS types)
 // before Vite strips them, rewrites every css`...` tag to a static object,
 // and routes the scoped CSS through a `\0virtual:...lang.css` module so it
@@ -56,7 +54,7 @@ export function inlineCssModules(
     },
 
     transform(code, id) {
-      const path = id.split('?')[0]
+      const path = id.split('?')[0] ?? id
       if (id.includes(PREFIX)) return null // our own virtual CSS module
       if (!include.test(path) || exclude.test(path)) return null
       if (!code.includes('css') || !code.includes('`')) return null

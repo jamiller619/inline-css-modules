@@ -20,7 +20,7 @@ export type Styles<K extends string = string> = Readonly<Record<K, string>>
  *
  *   const styles = css<{ page: string; item: string }>`...`;
  */
-export default function css<K extends string = string>(
+export function css<K extends string = string>(
   _strings: TemplateStringsArray,
   ..._values: unknown[]
 ): Styles<K> {

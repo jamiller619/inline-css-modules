@@ -1,5 +1,3 @@
-// esbuild.ts
-//
 // esbuild plugin. For each source file it rewrites every css`...` tag to a
 // static object at build time, then routes the scoped CSS through a virtual
 // module loaded as `css` — so esbuild bundles, orders, and minifies it exactly
@@ -38,7 +36,7 @@ export function inlineCssModules(
         if (!includeNodeModules && args.path.includes('node_modules')) return
 
         const source = await readFile(args.path, 'utf8')
-        if (!source.includes('css`')) return // fast bail, no parse needed
+        if (!source.includes('css') || !source.includes('`')) return // fast bail, no parse needed
 
         const { code, css } = transformSource(source, {
           filename: args.path,
