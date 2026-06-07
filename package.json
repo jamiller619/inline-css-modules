@@ -1,7 +1,7 @@
 {
   "name": "inline-css-modules",
   "version": "0.1.0",
-  "description": "CSS Modules, but inlined",
+  "description": "Zero-runtime CSS Modules written inline in your JS/TS files via a css template literal, scoped and extracted at build time by Vite or esbuild.",
   "main": "index.js",
   "license": "MIT",
   "type": "module",
