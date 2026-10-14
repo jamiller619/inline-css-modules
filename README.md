@@ -37,7 +37,7 @@ Your bundler rewrites every `` css`...` `` block at build time: class selectors 
 ## Install
 
 ```sh
-npm install inline-css-modules
+npm install -D inline-css-modules
 ```
 
 ## Setup
